@@ -18,6 +18,7 @@ public class GoogleUserAdapter implements UserService {
 	public void add(User user) {
 		Boolean logged = googleAuth.logIn(user.geteMail(), user.getPassword());
 		if (logged) {
+			user.setIsCheked(true);
 			dao.add(user);
 		}
 	}

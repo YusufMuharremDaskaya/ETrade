@@ -8,6 +8,7 @@ public class User implements Entities{
 	private String lastName;
 	private String eMail;
 	private String password;
+	private Boolean isCheked;
 	
 	public User(int id, String name, String lastName, String eMail, String password) {
 		super();
@@ -16,6 +17,7 @@ public class User implements Entities{
 		this.lastName = lastName;
 		this.eMail = eMail;
 		this.password = password;
+		isCheked = false;
 	}
 
 	
@@ -59,6 +61,16 @@ public class User implements Entities{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+
+	public Boolean getIsCheked() {
+		return isCheked;
+	}
+
+
+	public void setIsCheked(Boolean isCheked) {
+		this.isCheked = isCheked;
 	}
 	
 }

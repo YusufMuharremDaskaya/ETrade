@@ -7,11 +7,12 @@ import dataAccess.abstracts.UserDao;
 import entities.concretes.User;
 
 public class HibernateUserDao implements UserDao {
-
+	List<User> users = new ArrayList<User>();
+	
 	@Override
 	public void add(User user) {
 		System.out.println("kullanıcı hibernate ile eklendi: " + user.getName());
-		
+		users.add(user);
 	}
 
 	@Override
@@ -32,11 +33,10 @@ public class HibernateUserDao implements UserDao {
 		User user = new User(0, "Yusuf", "Daşkaya", "ydaskaya@gmail.com", "H2zvlnoc");
 		User user2 = new User(0, "Engin", "Demiroğ", "enginD@gmail.com", "azLc3rvb");
 		User user3 = new User(0, "Kerem", "Varış", "keremV@gmail.com", "HlvNp153");
-		List<User> list = new ArrayList<User>();
-		list.add(user);
-		list.add(user2);
-		list.add(user3);
-		return list;
+		users.add(user);
+		users.add(user2);
+		users.add(user3);
+		return users;
 	}
 	
 	@Override
